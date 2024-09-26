@@ -17,7 +17,7 @@ test.describe('Test suite', () => {
   });
 
 
-  test('Test case 01 - Get all rooms', async ({ request }) => {
+  test('Test case 02 - Get all rooms', async ({ request }) => {
     const respRooms = await request.get("http://localhost:3000/api/rooms", {
       headers: {
         "X-user-auth": JSON.stringify({
@@ -36,7 +36,7 @@ test.describe('Test suite', () => {
   })
 
 
-  test('Test case 01 - Create Room', async ({ request }) => {
+  test('Test case 03 - Create Room', async ({ request }) => {
     const response = await request.post(`${BASE_URL}/api/room/new`, {
       headers: {
         'X-user-auth': JSON.stringify({
@@ -60,7 +60,7 @@ test.describe('Test suite', () => {
 
 
 
-  test('Test case 01 - Get all clients', async ({ request }) => {
+  test('Test case 04 - Get all clients', async ({ request }) => {
     const respRooms = await request.get("http://localhost:3000/api/clients", {
       headers: {
         "X-user-auth": JSON.stringify({
@@ -82,11 +82,14 @@ test.describe('Test suite', () => {
 
 
 
-
-
-
-
 });
+
+
+
+
+
+
+
 
 
 
