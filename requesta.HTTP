@@ -3,3 +3,6 @@ GET  http://localhost:3000/login
 ###
 
 GET ("http://localhost:3000/api/rooms"
+####
+
+DELETE http://localhost:3000/api/client/1
