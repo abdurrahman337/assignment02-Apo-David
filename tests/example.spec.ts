@@ -95,6 +95,28 @@ test.describe('Test suite', () => {
       }
     });
 
+    test('Test case 06 - Delete Post by ID', async ({ request }) => {
+      const respClients = await request.get("http://localhost:3000/api/clients", {
+        headers: {
+          "X-user-auth": JSON.stringify({
+            username: "tester01",
+            token: tokenValue
+          })
+        },
+      });
+      const allClients = await respClients.json();
+      const lastButOneClientID = allClients[0].id;
+
+      const deletePostResponse = await request.delete(`http://localhost:3000/api/client/${lastButOneClientID}`)
+      expect(deletePostResponse.ok()).toBeTruthy();
+      //Verfy Delete requests
+      const deleteElementPostResponse = await request.get(`http://localhost:3000/api/client/${lastButOneClientID}`)
+      expect(deleteElementPostResponse.status()).toBe(404);
+
+    });
+
+
+
   });
 
 
