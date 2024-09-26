@@ -78,6 +78,27 @@ test.describe('Test suite', () => {
 
 
   })
+  test('Test case 01 - Create Client', async ({ request }) => {
+    const response = await request.post(`${BASE_URL}/api/client/new`, {
+      headers: {
+        'X-user-auth': JSON.stringify({
+          username: 'tester01',
+          token: tokenValue
+        }),
+        'Content-Type': 'application/json'
+      },
+      data:
+      {
+        "name": "David Svessson",
+        "email": "david.svensson@hotmail.se",
+        "telephone": "0202525052"
+      }
+    });
+
+  });
+
+
+
 
 
 
