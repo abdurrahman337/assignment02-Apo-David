@@ -57,6 +57,35 @@ test.describe('Test suite', () => {
 
 
   });
+
+
+
+  test('Test case 01 - Get all clients', async ({ request }) => {
+    const respRooms = await request.get("http://localhost:3000/api/clients", {
+      headers: {
+        "X-user-auth": JSON.stringify({
+          username: "tester01",
+          token: tokenValue
+        })
+      },
+    });
+
+
+    console.log(await respRooms.json())
+    const rooms = await respRooms.json();
+    expect(await respRooms.ok())
+    // expect(rooms.length).toBe(2);
+
+
+  })
+
+
+
+
+
+
+
+
 });
 
 
