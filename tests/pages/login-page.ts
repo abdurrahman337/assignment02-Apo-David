@@ -1,4 +1,4 @@
-import { expect, type Locator, type Page } from '@playwright/test';
+/*import { expect, type Locator, type Page } from '@playwright/test';
 
 export class LoginPage {
     //Attributes
@@ -25,4 +25,4 @@ export class LoginPage {
         await this.passwordTextfield.fill(password);
         await this.loginButton.click();
     }
-}
+}*/
